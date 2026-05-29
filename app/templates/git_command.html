@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Git Bash Commands</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#ffffff;
+    margin:0;
+    padding:20px;
+    color:#111;
+}
+
+.container{
+    max-width:850px;
+    margin:auto;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+/* Section Title */
+.section-title{
+    font-size:18px;
+    font-weight:bold;
+    margin:25px 0 10px;
+    color:#111;
+}
+
+/* Divider */
+.divider{
+    height:1px;
+    background:#e5e5e5;
+    margin:20px 0;
+}
+
+/* Card */
+.card{
+    border:1px solid #e5e5e5;
+    border-radius:10px;
+    padding:15px;
+    margin-bottom:12px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* Row */
+.row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+}
+
+/* Command text */
+.command{
+    flex:1;
+    font-family:Consolas, monospace;
+    font-size:14px;
+    word-break:break-word;
+}
+
+/* Button */
+button{
+    background:#16a34a;
+    color:#fff;
+    border:none;
+    padding:7px 12px;
+    border-radius:6px;
+    cursor:pointer;
+    white-space:nowrap;
+}
+
+button:hover{
+    background:#15803d;
+}
+
+.copied{
+    background:#0f9d58 !important;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<h1>🚀 Git Bash Commands</h1>
+
+<!-- ================= UPDATE PROJECT ================= -->
+<div class="section-title">Update Existing Project</div>
+
+<div class="card">
+    <div class="row">
+        <div class="command" id="u1">git status</div>
+        <button onclick="copy('u1', this)">Copy</button>
+    </div>
+</div>
+
+<div class="card">
+    <div class="row">
+        <div class="command" id="u2">git add .</div>
+        <button onclick="copy('u2', this)">Copy</button>
+    </div>
+</div>
+
+<div class="card">
+    <div class="row">
+        <div class="command" id="u3">git commit -m "Project updated"</div>
+        <button onclick="copy('u3', this)">Copy</button>
+    </div>
+</div>
+
+<div class="card">
+    <div class="row">
+        <div class="command" id="u4">git push origin main</div>
+        <button onclick="copy('u4', this)">Copy</button>
+    </div>
+</div>
+
+<div class="card">
+    <div class="row">
+        <div class="command" id="u5">git push origin master</div>
+        <button onclick="copy('u5', this)">Copy</button>
+    </div>
+</div>
+
+<div class="card">
+    <div class="row">
+        <div class="command" id="u6">git add . && git commit -m "Project updated" && git push origin main</div>
+        <button onclick="copy('u6', this)">Copy</button>
+    </div>
+</div>
+
+<!-- DIVIDER -->
+<div class="divider"></div>
+
+<!-- ================= FIRST TIME SETUP ================= -->
+<div class="section-title">First Time Project Setup</div>
+
+<div class="card">
+    <div class="row">
+        <div class="command" id="f1">git init</div>
+        <button onclick="copy('f1', this)">Copy</button>
+    </div>
+</div>
+
+<div class="card">
+    <div class="row">
+        <div class="command" id="f2">git add .</div>
+        <button onclick="copy('f2', this)">Copy</button>
+    </div>
+</div>
+
+<div class="card">
+    <div class="row">
+        <div class="command" id="f3">git commit -m "First commit"</div>
+        <button onclick="copy('f3', this)">Copy</button>
+    </div>
+</div>
+
+<div class="card">
+    <div class="row">
+        <div class="command" id="f4">git branch -M main</div>
+        <button onclick="copy('f4', this)">Copy</button>
+    </div>
+</div>
+
+<div class="card">
+    <div class="row">
+        <div class="command" id="f5">git remote add origin https://github.com/USERNAME/REPOSITORY.git</div>
+        <button onclick="copy('f5', this)">Copy</button>
+    </div>
+</div>
+
+<div class="card">
+    <div class="row">
+        <div class="command" id="f6">git push -u origin main</div>
+        <button onclick="copy('f6', this)">Copy</button>
+    </div>
+</div>
+
+</div>
+
+<script>
+function copy(id, btn){
+    let text = document.getElementById(id).innerText;
+    navigator.clipboard.writeText(text);
+
+    let old = btn.innerText;
+    btn.innerText = "Copied!";
+    btn.classList.add("copied");
+
+    setTimeout(()=>{
+        btn.innerText = old;
+        btn.classList.remove("copied");
+    },1500);
+}
+</script>
+
+</body>
+</html>
